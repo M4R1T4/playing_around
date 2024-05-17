@@ -13,7 +13,7 @@ def adjusted_r_squared(r_squared, X):
 
 def train_model(ModelClass, X_train, Y_train, **kwargs):
     '''
-        function trains a model with Train data 
+        function trains a model with Train data and gives back this model
     '''
     model = ModelClass(**kwargs)
     model.fit(X_train, Y_train)
@@ -22,7 +22,8 @@ def train_model(ModelClass, X_train, Y_train, **kwargs):
 
 def scatter_mae_train_test_data(df_name):
     '''
-        function shows a seaborn scatterplot with 
+        function shows a seaborn scatterplot from a special data frame 
+        with mean absolute error from train and test data 
     '''
     g = sns.scatterplot(data = df_name, x = 'model_name', y = 'test_mae', color = 'green')
     g = sns.scatterplot(data = df_name, x = 'model_name', y = 'train_mae', marker='+', color = 'green')
