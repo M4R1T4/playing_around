@@ -25,6 +25,7 @@ def scatter_mae_train_test_data(df_name):
         function shows a seaborn scatterplot from a special data frame 
         with mean absolute error from train and test data 
     '''
+    sns.set_style('whitegrid', {'grid.linestyle': '--'})
     g = sns.scatterplot(data = df_name, x = 'model_name', y = 'test_mae', color = 'green')
     g = sns.scatterplot(data = df_name, x = 'model_name', y = 'train_mae', marker='+', color = 'green')
     g.set_xticklabels(g.get_xticklabels(), rotation=90)
